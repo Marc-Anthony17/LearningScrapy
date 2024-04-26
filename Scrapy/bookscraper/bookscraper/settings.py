@@ -30,7 +30,22 @@ ROTATING_PROXY_LIST = [
     'proxy3.com:8032',
 ]
 
+PROXY_USER ='spb7w16dcy'
+PROXY_PASSWORD = 'i~uv6kc6i3zg6NJNBu'
+PROXY_ENDPOINT ='za.smartproxy.com'
+PROXY_PORT = '40003'
+#  http://spb7w16dcy:i~uv6kc6i3zg6NJNBu@za.smartproxy.com:40003
+
+# username = 'spb7w16dcy'
+# password = 'i~uv6kc6i3zg6NJNBu'
+
+# PROXY_ENDPOINT = 'za.smartproxy.com'  
 # ROTATING_PROXY_LIST_PATH = "/my/path/proxies.txt"
+
+
+# SCRAPEOPS_API_KEY = 'YOUR KEY'
+# SCRAPEOPS_PROXY_ENABLED= True
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscraper (+http://www.yourdomain.com)"
@@ -71,10 +86,12 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
    "bookscraper.middlewares.BookscraperDownloaderMiddleware": 543,
+   "bookscraper.middlewares.MyProxyMiddleware": 350,
+   
    # "bookscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware": 400,
-   "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
-   "rotating_proxies.middlewares.RotatingProxyMiddleware":610,
-   "rotating_proxies.middlewares.BanDetectionMiddleware":620,
+   # "bookscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 410,
+   # "rotating_proxies.middlewares.RotatingProxyMiddleware":610,
+   # "rotating_proxies.middlewares.BanDetectionMiddleware":620,
 
 }
 
